@@ -1,0 +1,60 @@
+@import "~src/scss/variables";
+
+.found_txt {
+  p {
+    margin-left: 1rem;
+    font-weight: 400;
+    font-size: 2rem;
+  }
+}
+
+.form-group {
+  i {
+    margin-left: 10px;
+  }
+  .search {
+    border-radius: 0.8rem;
+    margin: 20px 0 30px 25px;
+    padding: 12px 18px;
+    width: 200px;
+    border: none;
+    outline: none;
+    background-color: rgb(245, 245, 245);
+  }
+}
+
+ul {
+
+  li {
+    list-style-type: none;
+  }
+
+  .recipe_name {
+    margin-left: $margin_name_recipe;
+    color: rgb(235, 133, 50);
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  .ingredients_name {
+    margin-left: $margin_ingredients_name;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+
+  .ingredients {
+
+  }
+
+  .steps_name {
+    margin-left: $margin_ingredients_name;
+    font-weight: 600;
+    font-size: 1.2rem;
+
+  }
+
+  .steps{
+
+  }
+}
+
