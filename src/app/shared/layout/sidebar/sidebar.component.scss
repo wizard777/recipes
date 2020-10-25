@@ -1,20 +1,39 @@
 @import "~src/scss/variables";
 
-#aside {
+.aside {
   padding-bottom: 200px;
+  overflow: hidden;
 
-  h5 {
-    margin-left: 1rem;
-  }
+  .recipes_list {
 
-  ul {
-    list-style-type: none;
-    line-height: $line_height_aside;
-    li {
-      font-weight: 400;
-      font-size: 1.1rem;
-      width: 140px;
-      border-bottom: solid 0.01rem black;
+    p {
+      font-size: 1.6rem;
+      font-weight: $header_font;
+      margin-left: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    ul {
+      padding: 0 1rem;
+      list-style-type: none;
+      width: auto;
+
+      li {
+        font-weight: $header_font;
+        line-height: 1;
+        font-size: 1.1rem;
+        width: 70%;
+        padding: .2rem;
+
+        a {
+          text-decoration: none;
+          color: black;
+
+          &:hover {
+            color:rgb(80, 80, 80)
+          }
+        }
+      }
     }
   }
 }

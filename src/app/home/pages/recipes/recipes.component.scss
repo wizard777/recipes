@@ -1,31 +1,38 @@
 @import "~src/scss/variables";
 
-.found_txt {
-  p {
-    margin-left: 1rem;
-    font-weight: 400;
-    font-size: 2rem;
-  }
-}
 
 .form-group {
   i {
     margin-left: 10px;
   }
+
   .search {
-    border-radius: 0.8rem;
-    margin: 20px 0 30px 25px;
-    padding: 12px 18px;
-    width: 200px;
+  //  border-radius: 2rem;
+    margin: 1.5rem 1rem 2rem 3rem;
+    padding: .3rem 2rem;
+    width: 30%;
     border: none;
+    border-bottom: solid 1px black;
     outline: none;
-    background-color: rgb(245, 245, 245);
+   // background-color: rgb(245, 245, 245);
+
+    
+  }
+  input:focus {
+    font-weight: $header_font_middle;
+    font-size: 1rem;
   }
 }
 
+.recipes_found{
+font-weight: $header_font;
+font-size: 1.6rem;
+margin-left: 3rem;
+}
+  
 ul {
-
-  li {
+  
+  li { 
     list-style-type: none;
   }
 
@@ -34,27 +41,27 @@ ul {
     color: rgb(235, 133, 50);
     font-weight: 600;
     font-size: 1.5rem;
+    font-style: italic;
   }
 
   .ingredients_name {
     margin-left: $margin_ingredients_name;
-    font-weight: 600;
+    font-weight: $header_font;
     font-size: 1.2rem;
   }
 
   .ingredients {
-
   }
 
   .steps_name {
     margin-left: $margin_ingredients_name;
     font-weight: 600;
     font-size: 1.2rem;
-
   }
 
   .steps{
-
+    text-align: justify;
+    padding: 0 1rem;
   }
 }
 

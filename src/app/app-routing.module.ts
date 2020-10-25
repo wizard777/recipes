@@ -4,8 +4,8 @@ import { PageNotFoundComponent } from './home/pages/page-not-found/page-not-foun
 import { RecipesComponent } from './home/pages/recipes/recipes.component';
 
 const routes: Routes = [
-  { path: '',  component: RecipesComponent},
- // { path: '' , component: RecipesComponent},
+  { path: '', pathMatch: 'full', redirectTo: 'recipe-list' },
+  { path: 'recipe-list' , component: RecipesComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
 

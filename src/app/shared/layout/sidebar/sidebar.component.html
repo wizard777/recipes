@@ -1,10 +1,14 @@
-<aside id="aside">
-    <div>
-        <h5>Recipes</h5>
-        <ul>
-            <li><i>Main dish</i></li>
-            <li><i>Dessert</i></li>
-            <li><i>Occasional dishes</i></li>
-        </ul>
+<aside class="aside">
+    <div class="recipes_list">
+        <p>
+            Recipes </p>
+        <div >
+            <ul *ngFor="let item of filteredCategory">
+                <!-- {{item.id}} -->
+                <li>
+                    <a href="">{{item.category}}</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </aside>

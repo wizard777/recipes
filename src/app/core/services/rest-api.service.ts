@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { retry, catchError, map } from 'rxjs/operators';
 import { IRecipe } from 'src/app/core/interface/i-recipe';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,7 +21,7 @@ export class RestApiService {
     })
   };
 
-   // HttpClient API get() method => Fetch phones list
+
    getRecipes(): Observable<IRecipe[]> {
     return this.http.get<IRecipe[]>(`${this.apiUrl}`)
       .pipe(
@@ -32,14 +33,6 @@ export class RestApiService {
   }
 
   // tslint:disable-next-line:typedef
-  getRecipesByCategory(category: string) {
-    return this.http
-      .get<IRecipe[]>(`${this.apiUrl}/category/${category}`);
-     // .pipe(map(([res]) => res));
-  }
-
-
-  // tslint:disable-next-line:typedef
   handleError(error) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
@@ -47,7 +40,7 @@ export class RestApiService {
       errorMessage = error.error.message;
     } else {
       // Pobierz błąd po stronie serwera
-      errorMessage = `error code ${error.status}\nMessage: ${error.message}`;
+      errorMessage = `Server returned code: ${error.status}, \n error message is: ${error.message}`;
     }
     window.alert(errorMessage);
     return throwError(errorMessage);

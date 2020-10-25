@@ -12,8 +12,7 @@ import { HeaderComponent } from './shared/layout/header/header.component';
 import { FooterComponent } from './shared/layout/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { SearchPipe } from './core/pipes/search.pipe';
-import { SortNamePipe } from './core/pipes/sort-name.pipe';
-import { CategoryPipe } from './core/pipes/category.pipe';
+
 
 @NgModule({
   declarations: [
@@ -24,9 +23,8 @@ import { CategoryPipe } from './core/pipes/category.pipe';
     SidebarComponent,
     HeaderComponent,
     FooterComponent,
-    SearchPipe,
-    SortNamePipe,
-    CategoryPipe
+    SearchPipe
+
   ],
   imports: [
     BrowserModule,

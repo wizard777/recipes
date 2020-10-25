@@ -1,7 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { Component, OnInit} from '@angular/core';
 import { IRecipe } from 'src/app/core/interface/i-recipe';
 import { RestApiService } from 'src/app/core/services/rest-api.service';
 
@@ -13,24 +10,35 @@ import { RestApiService } from 'src/app/core/services/rest-api.service';
 })
 export class SidebarComponent implements OnInit {
 
-  names: any;
 
-  @Input() name: IRecipe;
+  constructor(private Api: RestApiService) { }
 
-  category: any;
+  categories: any = [];
+  filteredCategory: IRecipe;
 
-  constructor(private restApi: RestApiService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-this.ggg();
+    this.loadCategory();
   }
 
-   ggg(): any{
-    this.route.params.subscribe((params) => {
-      this.category = this.restApi.getRecipesByCategory(params.category)
-      .pipe(tap((res) => console.log('dddd' + res))
-      );
+
+  loadCategory(): any {
+    return this.Api.getRecipes().subscribe(data => {
+      // tslint:disable-next-line:no-string-literal
+      this.categories = data['Recipes'];
+      this.filteredCategory = this.categories.reduce((previousVal, currentVal) => {
+        if (!previousVal.some(
+          (item) => item.category === currentVal.category
+          // && item.id === currentVal.id
+        )
+        ) {
+          previousVal.push(currentVal);
+        }
+        return previousVal;
+      }, []);
+     // console.log(this.filteredCategory);
     });
-   }
+  }
+
 
 }
